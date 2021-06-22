@@ -1,7 +1,6 @@
 require("dotenv").config();
 const{ Client, MessageEmbed, MessageAttachment} = require('discord.js');
 const mongoose = require('mongoose');
-const util = require('util');
 const client = new Client();
 const server = require('./databases/server');
 const userinfo = require('./databases/userInformation')
