@@ -1,14 +1,11 @@
 require("dotenv").config();
 const{ Client, MessageEmbed, MessageAttachment} = require('discord.js');
 const mongoose = require('mongoose');
-const gm = require('gm');
 const client = new Client();
 const server = require('./databases/server');
 const userinfo = require('./databases/userInformation')
-var _prefix = "$";
 var url = "mongodb connect string";
-
-
+var _prefix = "$";
 
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
