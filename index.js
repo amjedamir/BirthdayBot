@@ -1,11 +1,12 @@
 require("dotenv").config();
 const{ Client, MessageEmbed, MessageAttachment} = require('discord.js');
 const mongoose = require('mongoose');
+const util = require('util');
 const client = new Client();
 const server = require('./databases/server');
 const userinfo = require('./databases/userInformation')
-var url = "mongodb connect string";
 var _prefix = "$";
+var url = "MONGO DB CONNECT STRING";
 
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -83,11 +84,13 @@ client.on('message',message => {
                         })
                     }
                     if(cmd == "prefix") {
-                        if(!args[0].length <= 0) {
-                            _prefix = args[0];
-                            server.updateOne({id:message.guild.id},{$set : {prefix : _prefix}},(err,noterr) => {
-                                message.channel.send('Updated The **prefix** !!! \n Prefix : **' + _prefix + '**')
-                            })    
+                        if(!args[0] == " " || !args[0] == "") {
+                            if(!args[0].length <= 0) {
+                                _prefix = args[0];
+                                server.updateOne({id:message.guild.id},{$set : {prefix : _prefix}},(err,noterr) => {
+                                    message.channel.send('Updated The **prefix** !!! \n Prefix : **' + _prefix + '**')
+                                })   
+                            } 
                         }else {
                             message.channel.send("The prefix can't have no letters")
                         }
@@ -135,4 +138,4 @@ client.on('message',message => {
 
 
 
-client.login(TOKEN);
+client.login(TOEKN);
