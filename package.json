@@ -1,0 +1,26 @@
+{
+  "name": "discord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js",
+    "app": "node ./app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheesy.js": "^2.3.0",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "fs": "^0.0.1-security",
+    "gm": "^1.23.1",
+    "http": "^0.0.1-security",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.14",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2",
+    "url": "^0.11.0"
+  }
+}
